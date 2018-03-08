@@ -1,0 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css?family=Meie+Script|Shadows+Into+Light|Arvo|Monda');
+ 
+ body {
+    background-image: url("../images/pow-star.png")
+  }
+
+  .jumbotron {
+      background-color: #ffff;
+      background-position: center;
+  }
+
+  .title {
+    font-family: 'Meie Script', cursive;
+    font-size: 45pt;
+    font-weight: 600;
+  }
+
+  .button-image {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+  .sappphire {
+      background-image: url("../images/blue-sapphire.png")
+  }
