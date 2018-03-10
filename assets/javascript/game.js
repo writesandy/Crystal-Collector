@@ -6,8 +6,23 @@ let score = "";
 let wins = 0;
 let losses = 0;
 
-// const guessMe = Math.floor(Math.random() * 120) + 19;
-// console.log(guessMe)
+// // Randomize number for player to guess (19-120)
+
+let guessMe = function getRandomIntInclusive(min, max) {
+        min = Math.ceil(19);
+        max = Math.floor(120);
+        return Math.floor(Math.random() * (max - min +1)) + min;
+
+}
+console.log(guessMe());
+
+$('.match-value').text(guessMe());
+
+})
+
+
+// Randomize Crystal values
+
 const crys1 = Math.floor(Math.random() * 12) + 1;
 console.log(crys1);
 const crys2 = Math.floor(Math.random() * 12) + 1;
@@ -19,20 +34,8 @@ console.log(crys4);
 
 // // Start Game Function
 
-// // Randomize number for player to guess (19-120)
 
 
-
-const guessMe = function getRandomIntInclusive(min, max) {
-        min = Math.ceil(19);
-        max = Math.floor(120);
-        return Math.floor(Math.random() * (max - min +1)) + min;
-
-        
-
-}
-console.log(guessMe());
-})
 // $('.match-value').text(guessMe);
 
 // // crystalVals = function getRandomIntInclusive(min, max) {
