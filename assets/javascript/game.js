@@ -1,66 +1,77 @@
 $(document).ready(function(){
 
-// Variables
+// Variables for win/loss/score
 
 let score = 0;
 let wins = 0;
 let losses = 0;
-let crys1 = "";
-let crys2 = "";
-let crys3 = "";
-let crys4 = "";
+
+//variables for crystals and guessMe
+let guessMe = "";
+let c1 = 0;
+let c2 = 0;
+let c3 = 0;
+let c4 = 0;
 
 
 // Start Game Function
+
+function startGame() {
+
 // Randomize number for player to guess (19-120)
 
-let guessMe = function getRandomIntInclusive(min, max) {
-        min = Math.ceil(19);
-        max = Math.floor(120);
-        return Math.floor(Math.random() * (max - min +1)) + min;
+let guessMe = Math.floor(Math.random() * 101) + 19;
 
-}
-console.log(guessMe());
+// Display number to match
 
-$('.match-value').text(guessMe());
-
-})
-
+$('.match-value').text(guessMe);
+console.log('match-value',guessMe);
 
 // Randomize Crystal values
 
-let crys1 = Math.floor(Math.random() * 12) + 1;
-console.log(crys1);
-let crys2 = Math.floor(Math.random() * 12) + 1;
-console.log(crys2);
-let crys3 = Math.floor(Math.random() * 12) + 1;
-console.log(crys3);
-let crys4 = Math.floor(Math.random() * 12) + 1;
-console.log(crys4);
+c1 = Math.floor(Math.random() * 12) + 1;
+console.log('amber:',c1);
+c2 = Math.floor(Math.random() * 12) + 1;
+console.log('diamond:',c2);
+c3 = Math.floor(Math.random() * 12) + 1;
+console.log('ruby:',c3);
+c4 = Math.floor(Math.random() * 12) + 1;
+console.log('emerald:',c4)
 
-
-// add points to DOM score when crystal is clicked
-
-$('.crystal').click(function(){
-        let score = 0
-       if (score !== guessValue) {
-        score += $(this).val();
-        console.log(score);
-        $('#score').text(score);
-        alert('uff duh');
 }
+startGame();
+
+console.log(c1,c2,c3,c4);
+
+// game scoring
+
+$('.amber').click(function(){
+        score = score + c1;
+        console.log('amber',score)
+        $('#score').text(score);
+})
+
+$('.diamond').click(function(){
+        score = score + c2;
+        console.log('diamond',score)
+        $('#score').text(score);
+})
+
+$('.ruby').click(function(){
+        score = score + c3;
+        console.log('ruby',score)
+        $('#score').text(score);
+})
+
+$('.emerald').click(function(){
+        score = score + c4;
+        console.log('emerald',score)
+        $('#score').text(score);
 })
 
 
-
-
-    
-        // } else {
-//         secondNumber += $(this).val();
-//         console.log(secondNumber);
-//         $('#second-number').text(secondNumber);
         
-//     });
+    });
     
 //     $('.crystal-amber').text(crys1);
 
