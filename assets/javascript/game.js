@@ -2,11 +2,17 @@ $(document).ready(function(){
 
 // Variables
 
-let score = "";
+let score = 0;
 let wins = 0;
 let losses = 0;
+let crys1 = "";
+let crys2 = "";
+let crys3 = "";
+let crys4 = "";
 
-// // Randomize number for player to guess (19-120)
+
+// Start Game Function
+// Randomize number for player to guess (19-120)
 
 let guessMe = function getRandomIntInclusive(min, max) {
         min = Math.ceil(19);
@@ -23,55 +29,46 @@ $('.match-value').text(guessMe());
 
 // Randomize Crystal values
 
-const crys1 = Math.floor(Math.random() * 12) + 1;
+let crys1 = Math.floor(Math.random() * 12) + 1;
 console.log(crys1);
-const crys2 = Math.floor(Math.random() * 12) + 1;
+let crys2 = Math.floor(Math.random() * 12) + 1;
 console.log(crys2);
-const crys3 = Math.floor(Math.random() * 12) + 1;
+let crys3 = Math.floor(Math.random() * 12) + 1;
 console.log(crys3);
-const crys4 = Math.floor(Math.random() * 12) + 1;
+let crys4 = Math.floor(Math.random() * 12) + 1;
 console.log(crys4);
 
-// // Start Game Function
 
+// add points to DOM score when crystal is clicked
 
-
-// $('.match-value').text(guessMe);
-
-// // crystalVals = function getRandomIntInclusive(min, max) {
-// //         min = Math.ceil(1);
-// //         max = Math.floor(12);
-// //         let crystalVals = [];
-// //         for (let i = 0; i < 4; i++); {
-// //             do { crystalVals = Math.floor(Math.random() * (max - min +1)) + min; } {
-// //         crystalVals.push
-// //         }
-// //         }
-// //     };
-
-
-
-//     // console.log(crystalVals([0,1,2,3]));
-
-
-
-// startGame();
-
-// console.log(guessMe());
-// })
-
-
-// // Assign value to guessValue
-
-
-// // Randomize number for crystals on click (1-12)
-
-
-// // Assign value to crystal values
+$('.crystal').click(function(){
+        let score = 0
+       if (score !== guessValue) {
+        score += $(this).val();
+        console.log(score);
+        $('#score').text(score);
+        alert('uff duh');
+}
+})
 
 
 
 
-// // Increment value to Score
+    
+        // } else {
+//         secondNumber += $(this).val();
+//         console.log(secondNumber);
+//         $('#second-number').text(secondNumber);
+        
+//     });
+    
+//     $('.crystal-amber').text(crys1);
 
-//})
+
+// if points are less than target add allow another click
+
+// if points equal target "You Win"
+
+// if points don't equal target "Try Again"
+
+

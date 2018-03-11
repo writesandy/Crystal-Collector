@@ -5,6 +5,10 @@
     background-image: url("../images/pow-star.png")
   }
 
+   .match-value {
+    font-size: 25px;
+   }
+
   .jumbotron {
       background-color: #ffff;
       background-position: center;
