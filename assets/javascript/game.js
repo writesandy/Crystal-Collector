@@ -6,12 +6,17 @@ let score = 0;
 let wins = 0;
 let losses = 0;
 
-//variables for crystals and guessMe
-let guessMe = "";
+//variables for crystals and matchMe
+let matchMe = 0;
 let c1 = 0;
 let c2 = 0;
 let c3 = 0;
 let c4 = 0;
+
+// Populate wins and losses
+
+$('#wins').text(wins);
+$('#losses').text(losses);
 
 
 // Start Game Function
@@ -20,12 +25,12 @@ function startGame() {
 
 // Randomize number for player to guess (19-120)
 
-let guessMe = Math.floor(Math.random() * 101) + 19;
+matchMe = Math.floor(Math.random() * 101) + 19;
 
 // Display number to match
 
-$('.match-value').text(guessMe);
-console.log('match-value',guessMe);
+$('.match-value').text(matchMe);
+console.log('match-value',matchMe);
 
 // Randomize Crystal values
 
@@ -36,50 +41,90 @@ console.log('diamond:',c2);
 c3 = Math.floor(Math.random() * 12) + 1;
 console.log('ruby:',c3);
 c4 = Math.floor(Math.random() * 12) + 1;
-console.log('emerald:',c4)
+console.log('emerald:',c4);
+$('.you-win, .you-lose').text(function(){
+        $('.you-win,.you-lose').hide();
 
+})
 }
+
 startGame();
 
 console.log(c1,c2,c3,c4);
+console.log(matchMe);
 
-// game scoring
+// Winner, winner chicken dinner function
+
+function winner () {
+        wins++;
+        $('#wins').text(wins);
+//         alert('winner, winner, chicken dinner');
+         $(".you-win").show();
+         score = 0;
+         startGame();
+}
+
+// Try Again function
+
+function tryAgain () {
+        losses++;
+        $('#losses').text(losses);
+ //        alert('loser');
+         $(".you-lose").show();
+         score = 0;
+         startGame();
+}
+
+
+// Crystal clicks and win eval
 
 $('.amber').click(function(){
         score = score + c1;
-        console.log('amber',score)
+        console.log('amber',score);
         $('#score').text(score);
-})
+        if (score === matchMe) {
+                winner();
+        } else if
+        (score > matchMe) 
+                tryAgain();
+        }       
+);
 
-$('.diamond').click(function(){
-        score = score + c2;
-        console.log('diamond',score)
-        $('#score').text(score);
-})
-
-$('.ruby').click(function(){
-        score = score + c3;
-        console.log('ruby',score)
-        $('#score').text(score);
-})
-
-$('.emerald').click(function(){
-        score = score + c4;
-        console.log('emerald',score)
-        $('#score').text(score);
-})
+        $('.diamond').click(function(){
+                score = score + c2;
+                console.log('diamond',score);
+                $('#score').text(score);
+                if (score === matchMe) {
+                        winner();
+                } else if
+                (score > matchMe) 
+                        tryAgain();
+}  
 
 
+);
+
+        $('.ruby').click(function(){
+                score = score + c3;
+                console.log('ruby',score);
+                $('#score').text(score);
+                if (score === matchMe) {
+                        winner();
+                } else if
+                (score > matchMe) 
+                        tryAgain();
         
-    });
-    
-//     $('.crystal-amber').text(crys1);
+        });
 
-
-// if points are less than target add allow another click
-
-// if points equal target "You Win"
-
-// if points don't equal target "Try Again"
-
-
+        $('.emerald').click(function(){
+                score = score + c4;
+                console.log('emerald',score);
+                $('#score').text(score);
+                if (score === matchMe) {
+                        winner();
+                } else if
+                (score > matchMe) 
+                        tryAgain();
+        
+});
+})
