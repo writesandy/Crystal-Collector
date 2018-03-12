@@ -75,7 +75,6 @@ function tryAgain () {
          startGame();
 }
 
-
 // Crystal clicks and win eval
 
 $('.amber').click(function(){
@@ -101,7 +100,6 @@ $('.amber').click(function(){
                         tryAgain();
 }  
 
-
 );
 
         $('.ruby').click(function(){
@@ -114,7 +112,7 @@ $('.amber').click(function(){
                 (score > matchMe) 
                         tryAgain();
         
-        });
+});
 
         $('.emerald').click(function(){
                 score = score + c4;
