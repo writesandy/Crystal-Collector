@@ -18,7 +18,6 @@ let c4 = 0;
 $('#wins').text(wins);
 $('#losses').text(losses);
 
-
 // Start Game Function
 
 function startGame() {
@@ -42,12 +41,14 @@ c3 = Math.floor(Math.random() * 12) + 1;
 console.log('ruby:',c3);
 c4 = Math.floor(Math.random() * 12) + 1;
 console.log('emerald:',c4);
+score = 0;
+$('.score').text(score);
 
 // Need to figure out how to get the show/hide to work - used an alert instead
-$('.you-win, .you-lose').text(function(){
-       $('.you-win,.you-lose').hide();
+// $('.you-win, .you-lose').text(function(){
+//        $('.you-win,.you-lose').hide();
 
-})
+// })
 }
 
 startGame();
@@ -60,9 +61,11 @@ console.log(matchMe);
 function winner () {
         wins++;
         $('#wins').text(wins);
+        score = 0;
+        $('#score').text(score);
         alert('winner, winner, chicken dinner');
  //        $(".you-win").show();
-         score = 0;
+
          startGame();
 }
 
@@ -71,9 +74,9 @@ function winner () {
 function tryAgain () {
         losses++;
         $('#losses').text(losses);
+        score = 0;
+        $('#score').text(score);
         alert('Try Again!');
- //        $(".you-lose").show();
-         score = 0;
          startGame();
 }
 
@@ -100,6 +103,7 @@ function tryAgain () {
                 } else if
                 (score > matchMe) 
                         tryAgain();
+
 }  
 
 );
