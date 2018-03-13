@@ -14,20 +14,29 @@ h1 {
   padding: 5%;
   }
 
+  #matchMe {
+    font-size: 20px;
+  }
+
+  #wrap-around {
+    border: solid; color: black; width: 25px;
+  }
   
   #scores {
-    display: inline-block;
+    display: block;
     background-color: pink;
-    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
   }
 
   #crystals {
-    display: inline-block;
-    padding: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
 
-   .match-value {
+   .score, .match-value {
     font-size: 25px;
    }
 
