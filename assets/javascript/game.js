@@ -44,8 +44,8 @@ c4 = Math.floor(Math.random() * 12) + 1;
 console.log('emerald:',c4);
 
 // Need to figure out how to get the show/hide to work - used an alert instead
-//$('.you-win, .you-lose').text(function(){
-//        $('.you-win,.you-lose').hide();
+$('.you-win, .you-lose').text(function(){
+       $('.you-win,.you-lose').hide();
 
 })
 }
