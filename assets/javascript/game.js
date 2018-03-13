@@ -42,8 +42,10 @@ c3 = Math.floor(Math.random() * 12) + 1;
 console.log('ruby:',c3);
 c4 = Math.floor(Math.random() * 12) + 1;
 console.log('emerald:',c4);
-$('.you-win, .you-lose').text(function(){
-        $('.you-win,.you-lose').hide();
+
+// Need to figure out how to get the show/hide to work - used an alert instead
+//$('.you-win, .you-lose').text(function(){
+//        $('.you-win,.you-lose').hide();
 
 })
 }
@@ -58,8 +60,8 @@ console.log(matchMe);
 function winner () {
         wins++;
         $('#wins').text(wins);
-//         alert('winner, winner, chicken dinner');
-         $(".you-win").show();
+        alert('winner, winner, chicken dinner');
+ //        $(".you-win").show();
          score = 0;
          startGame();
 }
@@ -69,24 +71,24 @@ function winner () {
 function tryAgain () {
         losses++;
         $('#losses').text(losses);
- //        alert('loser');
-         $(".you-lose").show();
+        alert('Try Again!');
+ //        $(".you-lose").show();
          score = 0;
          startGame();
 }
 
 // Crystal clicks and win eval
 
-$('.amber').click(function(){
-        score = score + c1;
-        console.log('amber',score);
-        $('#score').text(score);
-        if (score === matchMe) {
-                winner();
-        } else if
-        (score > matchMe) 
-                tryAgain();
-        }       
+        $('.amber').click(function(){
+                score = score + c1;
+                console.log('amber',score);
+                $('#score').text(score);
+                if (score === matchMe) {
+                        winner();
+                } else if
+                (score > matchMe) 
+                        tryAgain();
+                }       
 );
 
         $('.diamond').click(function(){
