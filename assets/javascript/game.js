@@ -44,11 +44,6 @@ console.log('emerald:',c4);
 score = 0;
 $('.score').text(score);
 
-// Need to figure out how to get the show/hide to work - used an alert instead
-// $('.you-win, .you-lose').text(function(){
-//        $('.you-win,.you-lose').hide();
-
-// })
 }
 
 startGame();
@@ -64,7 +59,6 @@ function winner () {
         score = 0;
         $('#score').text(score);
         alert('winner, winner, chicken dinner');
- //        $(".you-win").show();
 
          startGame();
 }
