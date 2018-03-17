@@ -82,7 +82,8 @@ function tryAgain () {
                 $('#score').text(score);
                 if (score === matchMe) {
                         winner();
-                } else if
+                }
+                 else if
                 (score > matchMe) 
                         tryAgain();
                 }       
